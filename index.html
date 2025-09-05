@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Mixer - Create Music Loops</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">🎵 Sound Mixer</h1>
+            <div class="header-controls">
+                <button id="playAllBtn" class="control-btn play-btn">▶️ Play All</button>
+                <button id="stopAllBtn" class="control-btn stop-btn">⏹️ Stop All</button>
+                <button id="saveBtn" class="control-btn save-btn">💾 Save</button>
+                <button id="shareBtn" class="control-btn share-btn">🔗 Share</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sound Library -->
+            <section class="sound-library">
+                <h2>🎼 Sound Library</h2>
+                <div class="sound-categories">
+                    <div class="category">
+                        <h3>🎸 Instruments</h3>
+                        <div class="sound-grid" id="instruments-grid">
+                            <!-- Instrument sounds will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="category">
+                        <h3>🌍 Environmental</h3>
+                        <div class="sound-grid" id="environmental-grid">
+                            <!-- Environmental sounds will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mixing Board -->
+            <section class="mixing-board">
+                <h2>🎛️ Your Mix</h2>
+                <div class="mix-tracks" id="mix-tracks">
+                    <!-- Active sound tracks will appear here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Save/Load Modal -->
+        <div id="saveModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Save Your Mix</h2>
+                <input type="text" id="mixName" placeholder="Enter mix name..." maxlength="50">
+                <div class="modal-buttons">
+                    <button id="confirmSave" class="btn primary">Save Mix</button>
+                    <button id="cancelSave" class="btn secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Share Modal -->
+        <div id="shareModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Share Your Mix</h2>
+                <div class="share-options">
+                    <button id="copyLink" class="btn primary">📋 Copy Link</button>
+                    <button id="downloadAudio" class="btn secondary">⬇️ Download Audio</button>
+                </div>
+                <div id="shareLink" class="share-link" style="display: none;">
+                    <input type="text" id="linkInput" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading sounds...</p>
+        </div>
+    </div>
+
+    <script src="audio-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
